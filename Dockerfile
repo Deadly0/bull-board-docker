@@ -2,8 +2,8 @@ FROM node:12-alpine
 
 WORKDIR /usr/app
 
-COPY ./bullboard/package.json .
-COPY ./bullboard/yarn.lock .
+COPY ./package.json .
+COPY ./yarn.lock .
 
 ENV NODE_ENV production
 ENV REDIS_HOST localhost
@@ -14,7 +14,7 @@ ENV BULL_PREFIX bull
 
 RUN yarn install
 
-COPY ./bullboard .
+COPY . .
 
 ARG PORT=3000
 ENV PORT $PORT

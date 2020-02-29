@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"outDir": "build",
+		"module": "commonjs",
+		"target": "es2017",
+		"sourceMap": true,
+		"moduleResolution": "node",
+		"allowJs": true,
+		"alwaysStrict": true,
+		"newLine": "crlf",
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"removeComments": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"lib": [
+			"es6",
+			"dom",
+			"esnext"
+		],
+		"paths": {
+			"shared/*": ["../shared/*"]
+		}
+	},
+	"include": [
+		"./src"
+	],
+	"exclude": [
+		"node_modules",
+		"build"
+	]
+}

@@ -1,11 +1,11 @@
 {
   "name": "bullboard",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "bull": "^3.13.0",
-    "bull-board": "^1.0.0-alpha.4",
+    "bull-board": "^1.0.0-alpha.5",
     "bullmq": "^1.8.2",
     "express": "^4.17.1",
     "redis": "^3.0.2"

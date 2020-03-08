@@ -1,6 +1,6 @@
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
-Supports both: bull and bullmq. bull-board version 0.6.0
+Supports both: bull and bullmq. bull-board version 1.0.0-alpha.4
 
 ### Quick start with Docker
 ```
@@ -49,7 +49,7 @@ services:
       - redis_db_data:/data
 
   bullboard:
-    container_name: ma-bullboard
+    container_name: bullboard
     image: deadly0/bull-board
     restart: always
     ports:

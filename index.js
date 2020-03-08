@@ -1,4 +1,5 @@
-const {createQueues, UI} = require('bull-board');
+const {setQueues, router} = require('bull-board');
+const Queue = require('bull');
 const express = require('express');
 const redis = require('redis');
 
@@ -14,19 +15,17 @@ const redisConfig = {
 const client = redis.createClient(redisConfig.redis);
 const prefix = process.env.BULL_PREFIX;
 const port = process.env.PORT;
-const queue = createQueues(redisConfig);
 
 client.KEYS(`${prefix}:*`, (err, keys) => {
 	const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));
+	const queueList = Array.from(uniqKeys).map((item) => new Queue(item, redisConfig));
 
-	uniqKeys.forEach((item) => {
-		queue.add(item);
-	});
+	setQueues(queueList);
 });
 
 const app = express();
 
-app.use('/', UI);
+app.use('/', router);
 app.listen(port, () => {
 	console.log(`bull-board listening on port ${port}!`);
 });

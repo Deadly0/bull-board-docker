@@ -8,8 +8,8 @@ const {
 	REDIS_HOST = 'localhost',
 	REDIS_PASSWORD,
 	REDIS_USE_TLS,
-	BULL_PREFIX,
-	PORT
+	BULL_PREFIX = 'bull',
+	PORT = 3000
 } = process.env;
 
 const redisConfig = {

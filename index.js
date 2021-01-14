@@ -1,5 +1,6 @@
-const {setQueues, router} = require('bull-board');
+const {router, setQueues, BullMQAdapter, BullAdapter} = require('bull-board')
 const Queue = require('bull');
+const bullmq = require('bullmq');
 const express = require('express');
 const redis = require('redis');
 
@@ -9,6 +10,7 @@ const {
 	REDIS_PASSWORD,
 	REDIS_USE_TLS,
 	BULL_PREFIX = 'bull',
+	BULL_VERSION = 'BULLMQ',
 	PORT = 3000,
 	BASE_PATH = '/'
 } = process.env;
@@ -29,7 +31,15 @@ const basePath = BASE_PATH;
 
 client.KEYS(`${prefix}:*`, (err, keys) => {
 	const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));
-	const queueList = Array.from(uniqKeys).map((item) => new Queue(item, redisConfig));
+	const queueList = Array.from(uniqKeys).sort().map(
+		(item) => {
+			if (BULL_VERSION === 'BULLMQ') {
+				return new BullMQAdapter(new bullmq.Queue(item, {connection: redisConfig.redis}));
+			}
+
+			return new BullAdapter(new Queue(item, redisConfig));
+		}
+	);
 
 	setQueues(queueList);
 });

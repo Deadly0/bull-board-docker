@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:14.15-alpine
 
 WORKDIR /usr/app
 
@@ -11,6 +11,7 @@ ENV REDIS_PORT 6379
 ENV REDIS_USE_TLS false
 ENV REDIS_PASSWORD ''
 ENV BULL_PREFIX bull
+ENV BULL_VERSION BULLMQ
 
 RUN yarn install
 

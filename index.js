@@ -17,7 +17,7 @@ const redisConfig = {
 	redis: {
 		port: REDIS_PORT,
 		host: REDIS_HOST,
-		...(REDIS_PASSWORD && { password: REDIS_PASSWORD }),
+		...(REDIS_PASSWORD && {password: REDIS_PASSWORD}),
 		tls: REDIS_USE_TLS === 'true',
 	},
 };
@@ -36,7 +36,7 @@ client.KEYS(`${prefix}:*`, (err, keys) => {
 
 const app = express();
 
-app.use(`${basePath}`, router);
+app.use(basePath, router);
 app.listen(port, () => {
-	console.log(`bull-board listening on port ${port} on basePath "${basePath}"!`);
+	console.log(`bull-board listening on port ${port} on basePath ${basePath}!`);
 });

@@ -12,6 +12,8 @@ ENV REDIS_USE_TLS false
 ENV REDIS_PASSWORD ''
 ENV BULL_PREFIX bull
 ENV BULL_VERSION BULLMQ
+ENV USER_LOGIN ''
+ENV USER_PASSWORD ''
 
 RUN yarn install
 
@@ -21,4 +23,4 @@ ARG PORT=3000
 ENV PORT $PORT
 EXPOSE $PORT
 
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]

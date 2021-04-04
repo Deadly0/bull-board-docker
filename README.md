@@ -1,6 +1,6 @@
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
-Supports both: bull and bullmq. bull-board version v1.2.0
+Supports both: bull and bullmq. bull-board version v1.5.1
 
 ### Quick start with Docker
 ```

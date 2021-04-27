@@ -35,6 +35,7 @@ see "Example with docker-compose" section for example with env parameters
 * `BULL_PREFIX` - prefix to your bull queue name (bull by default)
 * `BULL_VERSION` - version of bull lib to use 'BULLMQ' or 'BULL' ('BULLMQ' by default)
 * `BASE_PATH` - basePath for bull board, e.g. '/bull-board' ('/' by default)
+* `PROXY_PATH` - proxyPath for bull board, e.g. '/bull-board' ('' by default)
 * `USER_LOGIN` - login to restrict access to bull-board interface (disabled by default)
 * `USER_PASSWORD` - password to restrict access to bull-board interface (disabled by default)
 

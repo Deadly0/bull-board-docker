@@ -20,6 +20,7 @@ const redisConfig = {
     redis: {
         port: config.REDIS_PORT,
         host: config.REDIS_HOST,
+        db: config.REDIS_DB,
         ...(config.REDIS_PASSWORD && {password: config.REDIS_PASSWORD}),
         tls: config.REDIS_USE_TLS === 'true',
     },

@@ -9,12 +9,9 @@ const session = require('express-session');
 const passport = require('passport');
 const {ensureLoggedIn} = require('connect-ensure-login');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
 
 const {authRouter} = require('./login');
 const config = require('./config');
-console.log('bull-board-config:', config);
-
 
 const redisConfig = {
     redis: {
@@ -50,7 +47,11 @@ const app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(morgan('combined'));
+if (app.get('env') !== 'production') {
+    const morgan = require('morgan');
+    app.use(morgan('combined'));
+}
+
 app.use((req, res, next) => {
     if (config.PROXY_PATH) req.proxyUrl = config.PROXY_PATH;
     next();

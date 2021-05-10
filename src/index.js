@@ -1,4 +1,6 @@
-const {router, setQueues, BullMQAdapter, BullAdapter} = require('bull-board');
+const {createBullBoard} = require('bull-board');
+const {BullAdapter} = require('bull-board/bullAdapter')
+const {BullMQAdapter} = require('bull-board/bullMQAdapter')
 const Queue = require('bull');
 const bullmq = require('bullmq');
 const express = require('express');
@@ -21,6 +23,7 @@ const redisConfig = {
 };
 
 const client = redis.createClient(redisConfig.redis);
+const {router, setQueues} = createBullBoard([]);
 
 client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
 	const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));
@@ -35,6 +38,7 @@ client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
 	);
 
 	setQueues(queueList);
+	console.log('done!')
 });
 
 const app = express();
@@ -58,4 +62,5 @@ else {
 
 app.listen(config.PORT, () => {
 	console.log(`bull-board is started http://localhost:${config.PORT}${config.HOME_PAGE}`);
+	console.log(`bull-board is fetching queue list, please wait...`);
 });

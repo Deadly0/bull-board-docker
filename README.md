@@ -1,6 +1,6 @@
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
-Supports both: bull and bullmq. bull-board version v1.5.1
+Supports both: bull and bullmq. bull-board version v2.0.3
 
 ### Quick start with Docker
 ```
@@ -69,7 +69,7 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_PASSWORD: example-password
-      REDIS_USE_TLS: false
+      REDIS_USE_TLS: 'false'
       BULL_PREFIX: bull
     depends_on:
       - redis

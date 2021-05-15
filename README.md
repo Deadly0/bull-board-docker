@@ -30,11 +30,13 @@ see "Example with docker-compose" section for example with env parameters
 ### Environment variables
 * `REDIS_HOST` - host to connect to redis (localhost by default)
 * `REDIS_PORT` - redis port (6379 by default)
+* `REDIS_DB` - redis db ('0' by default)
 * `REDIS_USE_TLS` - enable TLS true or false (false by default)
 * `REDIS_PASSWORD` - password to connect to redis (no password by default)
 * `BULL_PREFIX` - prefix to your bull queue name (bull by default)
 * `BULL_VERSION` - version of bull lib to use 'BULLMQ' or 'BULL' ('BULLMQ' by default)
 * `BASE_PATH` - basePath for bull board, e.g. '/bull-board' ('/' by default)
+* `PROXY_PATH` - proxyPath for bull board, e.g. '/bull-board' ('' by default)
 * `USER_LOGIN` - login to restrict access to bull-board interface (disabled by default)
 * `USER_PASSWORD` - password to restrict access to bull-board interface (disabled by default)
 

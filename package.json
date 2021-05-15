@@ -12,7 +12,7 @@
     "bull-board": "^2.0.3",
     "bullmq": "^1.8.4",
     "connect-ensure-login": "^0.1.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "morgan": "^1.10.0",

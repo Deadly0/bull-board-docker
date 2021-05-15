@@ -14,13 +14,13 @@ const {authRouter} = require('./login');
 const config = require('./config');
 
 const redisConfig = {
-    redis: {
-        port: config.REDIS_PORT,
-        host: config.REDIS_HOST,
-        db: config.REDIS_DB,
-        ...(config.REDIS_PASSWORD && {password: config.REDIS_PASSWORD}),
-        tls: config.REDIS_USE_TLS === 'true',
-    },
+	redis: {
+		port: config.REDIS_PORT,
+		host: config.REDIS_HOST,
+		db: config.REDIS_DB,
+		...(config.REDIS_PASSWORD && {password: config.REDIS_PASSWORD}),
+		tls: config.REDIS_USE_TLS === 'true',
+	},
 };
 
 const client = redis.createClient(redisConfig.redis);
@@ -48,25 +48,28 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 if (app.get('env') !== 'production') {
-    const morgan = require('morgan');
-    app.use(morgan('combined'));
+	const morgan = require('morgan');
+	app.use(morgan('combined'));
 }
 
 app.use((req, res, next) => {
-    if (config.PROXY_PATH) req.proxyUrl = config.PROXY_PATH;
-    next();
+	if (config.PROXY_PATH) {
+		req.proxyUrl = config.PROXY_PATH;
+	}
+
+	next();
 });
 
 const sessionOpts = {
-    name: 'bull-board.sid',
-    secret: Math.random().toString(),
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        path: '/',
-        httpOnly: false,
-        secure: false
-    }
+	name: 'bull-board.sid',
+	secret: Math.random().toString(),
+	resave: false,
+	saveUninitialized: false,
+	cookie: {
+		path: '/',
+		httpOnly: false,
+		secure: false
+	}
 };
 
 app.use(session(sessionOpts));
@@ -75,10 +78,10 @@ app.use(passport.session({}));
 app.use(bodyParser.urlencoded({extended: false}));
 
 if (config.AUTH_ENABLED) {
-    app.use(config.LOGIN_PAGE, authRouter);
-    app.use(config.HOME_PAGE, ensureLoggedIn(config.PROXY_LOGIN_PAGE), router);
+	app.use(config.LOGIN_PAGE, authRouter);
+	app.use(config.HOME_PAGE, ensureLoggedIn(config.LOGIN_PAGE), router);
 } else {
-    app.use(config.HOME_PAGE, router);
+	app.use(config.HOME_PAGE, router);
 }
 
 app.listen(config.PORT, () => {

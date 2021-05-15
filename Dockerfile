@@ -1,4 +1,4 @@
-FROM node:14.15-alpine
+FROM node:14.17-alpine
 
 WORKDIR /usr/app
 
@@ -14,6 +14,8 @@ ENV BULL_PREFIX bull
 ENV BULL_VERSION BULLMQ
 ENV USER_LOGIN ''
 ENV USER_PASSWORD ''
+ENV REDIS_DB 0
+ENV PROXY_PATH ''
 
 RUN yarn install
 

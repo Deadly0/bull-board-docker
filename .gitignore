@@ -11,3 +11,4 @@ jspm_packages/
 
 .idea/
 .env
+.npmrc

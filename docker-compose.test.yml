@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  nginx:
+    build: ./test/nginx
+  redis:
+    image: redis
+  bull-board:
+    build: .
+    environment:
+      REDIS_HOST: redis
+      PROXY_PATH: /app/bull-board/
+      PORT: 80
+    depends_on:
+      - redis
+      - nginx
+  sut: # docker hub test entry
+    image: curlimages/curl
+    command: -sSL --retry 3 --retry-connrefused http://nginx/app/bull-board
+    depends_on:
+      - bull-board

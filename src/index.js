@@ -48,6 +48,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 if (app.get('env') !== 'production') {
+	console.log('bull-board condig:', config);
 	const morgan = require('morgan');
 	app.use(morgan('combined'));
 }

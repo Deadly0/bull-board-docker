@@ -20,8 +20,8 @@ const config = {
 	USER_PASSWORD: process.env.USER_PASSWORD,
 
 	AUTH_ENABLED: Boolean(process.env.USER_LOGIN && process.env.USER_PASSWORD),
-	HOME_PAGE: PROXY_PATH || '/',
-	LOGIN_PAGE: `${PROXY_PATH}/login`,
+	HOME_PAGE: '/',
+	LOGIN_PAGE: '/login',
 };
 
 module.exports = config;

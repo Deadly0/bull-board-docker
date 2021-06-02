@@ -11,6 +11,7 @@ services:
       REDIS_HOST: redis
       PROXY_PATH: /app/bull-board/
       PORT: 80
+      NODE_ENV: test
     depends_on:
       - redis
       - nginx

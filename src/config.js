@@ -1,10 +1,13 @@
 require('dotenv').config();
+const path = require('path');
 
 function normalizePath(pathStr) {
 	return (pathStr || '').replace(/\/$/, '');
 }
 
 const PROXY_PATH = normalizePath(process.env.PROXY_PATH);
+const HOME_PAGE = '/'
+const LOGIN_PAGE = '/login'
 
 const config = {
 	REDIS_PORT: process.env.REDIS_PORT || 6379,
@@ -15,13 +18,15 @@ const config = {
 	BULL_PREFIX: process.env.BULL_PREFIX || 'bull',
 	BULL_VERSION: process.env.BULL_VERSION || 'BULLMQ',
 	PORT: process.env.PORT || 3000,
-	PROXY_PATH: PROXY_PATH,
+	PROXY_PATH,
 	USER_LOGIN: process.env.USER_LOGIN,
 	USER_PASSWORD: process.env.USER_PASSWORD,
 
 	AUTH_ENABLED: Boolean(process.env.USER_LOGIN && process.env.USER_PASSWORD),
-	HOME_PAGE: '/',
-	LOGIN_PAGE: '/login',
+	HOME_PAGE,
+	LOGIN_PAGE,
+	PROXY_HOME_PAGE: path.join(PROXY_PATH, HOME_PAGE),
+	PROXY_LOGIN_PAGE: path.join(PROXY_PATH, LOGIN_PAGE),
 };
 
 module.exports = config;

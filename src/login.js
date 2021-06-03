@@ -29,8 +29,8 @@ authRouter.route('/')
 		res.render('login');
 	})
 	.post(passport.authenticate('local', {
-		successRedirect: config.HOME_PAGE,
-		failureRedirect: config.LOGIN_PAGE,
+		successRedirect: config.PROXY_HOME_PAGE,
+		failureRedirect: config.PROXY_LOGIN_PAGE,
 	}));
 
 exports.authRouter = authRouter;

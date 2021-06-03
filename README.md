@@ -1,6 +1,6 @@
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
-Supports both: bull and bullmq. bull-board version v2.0.3
+Supports both: bull and bullmq. bull-board version v3.2.6
 
 ### Quick start with Docker
 ```
@@ -11,7 +11,7 @@ will run bull-board interface on `localhost:3000` and connect to your redis inst
 To configurate redis see "Environment variables" section.
 
 ### Quick start with docker-compose
-```
+```yaml
 version: '3.5'
 
 services:
@@ -47,7 +47,7 @@ Only when both `USER_LOGIN` and `USER_PASSWORD` specified, access will be restri
 
 
 ### Example with docker-compose
-```
+```yaml
 version: '3.5'
 
 services:

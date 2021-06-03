@@ -1,6 +1,7 @@
-const {createBullBoard} = require('bull-board');
-const {BullAdapter} = require('bull-board/bullAdapter')
-const {BullMQAdapter} = require('bull-board/bullMQAdapter')
+const {createBullBoard} = require('@bull-board/api');
+const {BullAdapter} = require('@bull-board/api/bullAdapter');
+const {BullMQAdapter} = require('@bull-board/api//bullMQAdapter');
+const {ExpressAdapter} = require('@bull-board/express');
 const Queue = require('bull');
 const bullmq = require('bullmq');
 const express = require('express');
@@ -23,8 +24,10 @@ const redisConfig = {
 	},
 };
 
+const serverAdapter = new ExpressAdapter();
 const client = redis.createClient(redisConfig.redis);
-const {router, setQueues} = createBullBoard([]);
+const {setQueues} = createBullBoard({queues: [], serverAdapter});
+const router = serverAdapter.getRouter();
 
 client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
 	const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));

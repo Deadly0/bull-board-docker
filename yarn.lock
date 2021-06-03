@@ -99,17 +99,6 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-bull-board@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/bull-board/-/bull-board-2.0.3.tgz#2bc27e05dd3e080fb663c35c89fbd5d2395455c6"
-  integrity sha512-3PVwZIy+CH8+Ik8y8TZRjGLz5vFMYJ5PpDuMLZoD/ZPo8GQVhIuZ+mXFhNW7TWtCos9uW6gS0rRTNBDuLvlN/g==
-  dependencies:
-    "@types/express" "^4.17.9"
-    "@types/express-serve-static-core" "^4.17.14"
-    ejs "3.1.6"
-    express "4.17.1"
-    redis-info "^3.0.8"
-
 bull@^3.13.0:
   version "3.22.5"
   resolved "https://registry.yarnpkg.com/bull/-/bull-3.22.5.tgz#ab42d76ecb7d8c5faba7a6a6e1d8b0ed0cde7ff5"
@@ -338,7 +327,7 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-express-session@^1.17.1:
+express-session@^1.17.2:
   version "1.17.2"
   resolved "https://registry.yarnpkg.com/express-session/-/express-session-1.17.2.tgz#397020374f9bf7997f891b85ea338767b30d0efd"
   integrity sha512-mPcYcLA0lvh7D4Oqr5aNJFMtBMKPLl++OKKxkHzZ0U0oDq1rpKBnkR5f5vCHR26VeArlTOEF9td4x5IjICksRQ==

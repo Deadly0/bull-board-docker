@@ -99,10 +99,21 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
+bull-board@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bull-board/-/bull-board-2.0.3.tgz#2bc27e05dd3e080fb663c35c89fbd5d2395455c6"
+  integrity sha512-3PVwZIy+CH8+Ik8y8TZRjGLz5vFMYJ5PpDuMLZoD/ZPo8GQVhIuZ+mXFhNW7TWtCos9uW6gS0rRTNBDuLvlN/g==
+  dependencies:
+    "@types/express" "^4.17.9"
+    "@types/express-serve-static-core" "^4.17.14"
+    ejs "3.1.6"
+    express "4.17.1"
+    redis-info "^3.0.8"
+
 bull@^3.13.0:
-  version "3.22.7"
-  resolved "https://registry.yarnpkg.com/bull/-/bull-3.22.7.tgz#be17398edad4e17e54db9b9c7388d92381f6ea1d"
-  integrity sha512-hrpfs1InzliuevKUOxAfGVctViic8uKP5zOkFAeNI4yVhlR5Ai3pSXFBiC78p2dl/t2AlC504pOqYJw3W9eSSA==
+  version "3.22.5"
+  resolved "https://registry.yarnpkg.com/bull/-/bull-3.22.5.tgz#ab42d76ecb7d8c5faba7a6a6e1d8b0ed0cde7ff5"
+  integrity sha512-wA5CRChiqF7bQ3/mLToFRiAKujWVBJJ07Ok368aiER8N1ail0veHwHc02I4lMMUyG9WoxHCHyrCqyPQhDGrd2w==
   dependencies:
     cron-parser "^2.13.0"
     debuglog "^1.0.0"
@@ -259,10 +270,10 @@ destroy@~1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
-dotenv@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.2.tgz#dacc20160935a37dea6364aa1bef819fb9b6ab05"
-  integrity sha512-I9OvvrHp4pIARv4+x9iuewrWycX6CcZtoAu1XrzPxc5UygMJXJZYmBsynku8IkrJwgypE5DGNjDPmPRhDCptUg==
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -848,7 +859,7 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
-redis@^3.0.2:
+redis@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/redis/-/redis-3.1.2.tgz#766851117e80653d23e0ed536254677ab647638c"
   integrity sha512-grn5KoZLr/qrRQVwoSkmzdbw6pwF+/rwODtrOr6vuBRiR/f3rjSTGupbF90Zpqm2oenix8Do6RV7pYEkGwlKkw==

@@ -1,3 +1,11 @@
+[![License](https://img.shields.io/github/license/Addono/bull-board-docker?style=flat-square)](https://github.com/Addono/bull-board-docker/blob/master/LICENSE)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://img.shields.io/badge/project%20status-Active-greengrass?style=flat-square)](https://www.repostatus.org/#active)
+![GitHub Workflow Status - Docker](https://img.shields.io/github/workflow/status/Addono/bull-board-docker/Docker?style=flat-square)
+[
+![Docker Image Pulls (all-time)](https://img.shields.io/docker/pulls/addono/bull-board?style=flat-square)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/addono/bull-board?sort=semver&style=flat-square)
+](https://hub.docker.com/r/addono/bull-board)
+
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
 Supports both: Bull and BullMQ.

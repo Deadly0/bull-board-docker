@@ -4,8 +4,6 @@ Supports both: Bull and BullMQ.
 
 ### Quick start with Docker
 
-[![npm](https://img.shields.io/npm/v/bullboard.svg)](https://www.npmjs.com/package/bullboard)
-
 ```
 docker run -p 3000:3000 addono/bull-board
 ```

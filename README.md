@@ -1,10 +1,10 @@
 Docker image for [bull-board]. Allow you to monitor your bull queue without any coding!
 
-Supports both: bull and bullmq. bull-board version v3.2.6
+Supports both: Bull and BullMQ.
 
 ### Quick start with Docker
 ```
-docker run -p 3000:3000 deadly0/bull-board
+docker run -p 3000:3000 addono/bull-board
 ```
 will run bull-board interface on `localhost:3000` and connect to your redis instance on `localhost:6379` without password.
 
@@ -17,7 +17,7 @@ version: '3.5'
 services:
   bullboard:
     container_name: bullboard
-    image: deadly0/bull-board
+    image: addono/bull-board
     restart: always
     ports:
       - 3000:3000
@@ -62,7 +62,7 @@ services:
 
   bullboard:
     container_name: bullboard
-    image: deadly0/bull-board
+    image: addono/bull-board
     restart: always
     ports:
       - 3000:3000
@@ -81,4 +81,4 @@ volumes:
 ```
 
 [bull-board]: https://github.com/vcapretz/bull-board
-[bull-board]: https://github.com/felixmosh/bull-board#hosting-router-on-a-sub-path
+[bull-board]: https://github.com/addono/bull-board#hosting-router-on-a-sub-path

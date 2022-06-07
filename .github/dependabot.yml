@@ -1,0 +1,32 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    labels:
+      - 'Github Actions'
+      - 'dependencies'
+
+  # Maintain dependencies for npm
+  - package-ecosystem: 'npm' 
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    versioning-strategy: 'increase'
+    labels:
+      - 'npm'
+      - 'dependencies'
+
+  # Maintain dependencies for docker images in dockerfiles FROM clauses
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    labels:
+      - 'docker'
+      - 'dependencies'
+    ignore:
+      - dependency-name: 'node'
+        update-types: ['version-update:semver-major']

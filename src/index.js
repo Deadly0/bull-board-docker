@@ -10,6 +10,7 @@ const session = require('express-session');
 const passport = require('passport');
 const {ensureLoggedIn} = require('connect-ensure-login');
 const bodyParser = require('body-parser');
+const process = require('process')
 
 const {authRouter} = require('./login');
 const config = require('./config');
@@ -91,3 +92,9 @@ app.listen(config.PORT, () => {
 	console.log(`bull-board is started http://localhost:${config.PORT}${config.HOME_PAGE}`);
 	console.log(`bull-board is fetching queue list, please wait...`);
 });
+
+// Handle interrupts
+process.on('SIGINT', () => {
+  console.info("Stopping...")
+  process.exit(0)
+})

@@ -17,7 +17,7 @@ ENV USER_PASSWORD ''
 ENV REDIS_DB 0
 ENV PROXY_PATH ''
 
-RUN yarn install
+RUN yarn install --immutable
 
 COPY . .
 

@@ -3,6 +3,9 @@ Docker image for [bull-board]. Allow you to monitor your bull queue without any 
 Supports both: Bull and BullMQ.
 
 ### Quick start with Docker
+
+[![npm](https://img.shields.io/npm/v/bullboard.svg)](https://www.npmjs.com/package/bullboard)
+
 ```
 docker run -p 3000:3000 addono/bull-board
 ```
@@ -80,5 +83,4 @@ volumes:
     external: false
 ```
 
-[bull-board]: https://github.com/vcapretz/bull-board
-[bull-board]: https://github.com/addono/bull-board#hosting-router-on-a-sub-path
+[bull-board]: https://github.com/felixmosh/bull-board

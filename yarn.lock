@@ -759,10 +759,10 @@ builtins@^5.0.0:
   dependencies:
     semver "^7.0.0"
 
-bull@^4.8.5:
-  version "4.8.5"
-  resolved "https://registry.yarnpkg.com/bull/-/bull-4.8.5.tgz#eebafddc3249d6d5e8ced1c42b8bfa8efcc274aa"
-  integrity sha512-2Z630e4f6VsLJnWMAtfEHwIqJYmND4W3dcG48RIbXeWpvb4UnYtpe/zxEdslJu0PKrltB4IkFj5YtBsdeQRn8w==
+bull@^4.10.1:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/bull/-/bull-4.10.1.tgz#f14974b6089358b62b495a2cbf838aadc098e43f"
+  integrity sha512-Fp21tRPb2EaZPVfmM+ONZKVz2RA+to+zGgaTLyCKt3JMSU8OOBqK8143OQrnGuGpsyE5G+9FevFAGhdZZfQP2g==
   dependencies:
     cron-parser "^4.2.1"
     debuglog "^1.0.0"

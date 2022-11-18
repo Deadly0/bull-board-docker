@@ -14,7 +14,7 @@
     "bullmq": "^1.87.1",
     "connect-ensure-login": "^0.1.1",
     "dotenv": "^16.0.3",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "express-session": "^1.17.3",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",

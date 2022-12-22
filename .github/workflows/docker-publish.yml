@@ -79,4 +79,4 @@ jobs:
         with:
           username: ${{ env.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-          repository: ${{ env.REGISTRY_USERNAME }}/${{ env.IMAGE_NAME }}
+          repository: ${{ env.IMAGE_NAME }}

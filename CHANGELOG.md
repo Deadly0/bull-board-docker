@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Addono/bull-board-docker/compare/v1.2.0...v1.2.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* **ci:** re-trigger release to push tagged Docker image ([5b6132a](https://github.com/Addono/bull-board-docker/commit/5b6132affa4ba8493b4802ae99c21a3324c4c4b2))
+
 # [1.2.0](https://github.com/Addono/bull-board-docker/compare/v1.1.0...v1.2.0) (2023-01-04)
 
 

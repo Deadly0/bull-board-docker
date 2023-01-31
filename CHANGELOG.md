@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Addono/bull-board-docker/compare/v1.2.1...v1.3.0) (2023-01-31)
+
+
+### Features
+
+* **deps:** trigger release with Bull Board v4.11.0 ([c5b24f9](https://github.com/Addono/bull-board-docker/commit/c5b24f93462f14f24b971a55c18384ad4bf052b4))
+
 ## [1.2.1](https://github.com/Addono/bull-board-docker/compare/v1.2.0...v1.2.1) (2023-01-04)
 
 

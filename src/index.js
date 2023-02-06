@@ -34,7 +34,11 @@ client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
 	const queueList = Array.from(uniqKeys).sort().map(
 		(item) => {
 			if (config.BULL_VERSION === 'BULLMQ') {
-				return new BullMQAdapter(new bullmq.Queue(item, {connection: redisConfig.redis}));
+				const options = { connection: redisConfig.redis };
+				if (config.BULL_PREFIX) {
+					options.prefix = config.BULL_PREFIX;
+				}
+				return new BullMQAdapter(new bullmq.Queue(item, options));
 			}
 
 			return new BullAdapter(new Queue(item, redisConfig));

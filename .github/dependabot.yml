@@ -18,6 +18,10 @@ updates:
     labels:
       - 'npm'
       - 'dependencies'
+    ignore:
+      # Bull Board stays on BullMQ v1
+      - dependency-name: 'bullmq'
+        versions: [">=2"]
 
   # Maintain dependencies for docker images in dockerfiles FROM clauses
   - package-ecosystem: 'docker'

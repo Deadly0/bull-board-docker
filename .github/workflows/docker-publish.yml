@@ -9,11 +9,11 @@ on:
   schedule:
     - cron: "42 15 * * *"
   push:
-    branches: [ "master" ]
+    branches: ["master"]
     # Publish semver tags as releases.
-    tags: [ "v*.*.*" ]
+    tags: ["v*.*.*"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
   workflow_dispatch: # Allow manually kicking off the pipeline
 
 env:
@@ -21,15 +21,13 @@ env:
   REGISTRY: docker.io
   REGISTRY_USERNAME: addono
   IMAGE_NAME: addono/bull-board
-  
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -72,10 +70,10 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          
+
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
-        if: github.ref == 'refs/heads/master'  # Only run when on master, as to avoid triggering on PRs or tags
+        if: github.ref == 'refs/heads/master' # Only run when on master, as to avoid triggering on PRs or tags
         with:
           username: ${{ env.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}

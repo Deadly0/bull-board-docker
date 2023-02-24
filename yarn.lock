@@ -30,10 +30,10 @@
   dependencies:
     redis-info "^3.0.8"
 
-"@bull-board/api@^4.11.1":
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/@bull-board/api/-/api-4.11.1.tgz#a060b9fb5a34ae6b789adc2cb6bd40f6743a5f86"
-  integrity sha512-x+CKpLKZ4yJ1CETvoX9cIOMM1ZfsXr6N9pOsRj8/lh0Mo/rbQWbfdlZR1jiALMAKu1RzJnffZcn6uKeFoXMRBQ==
+"@bull-board/api@^4.12.1":
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/@bull-board/api/-/api-4.12.1.tgz#10e328fb3c70473ca99a27e6ebbec11b5ce6a9d5"
+  integrity sha512-cJk7LhphNZHwbN4yON5rYiDgob3D7cwFGrxf6LlnR1w/a6zyap1x/o74MfV/0T6NpUpvUSf7ccbj3knU6DNYVw==
   dependencies:
     redis-info "^3.0.8"
 

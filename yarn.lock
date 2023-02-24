@@ -23,36 +23,29 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@bull-board/api@4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@bull-board/api/-/api-4.11.0.tgz#b39d698c829d8d192c1b7fa29e6ffaf6901e520b"
-  integrity sha512-qFnG63s3BkaslsNnXYagEUcdeK9SijZTJ+I4vMU+OiZt9VlKh01X1KjNlqjF9guvWcjk+Rg8UOMm0fWwM6PK6g==
-  dependencies:
-    redis-info "^3.0.8"
-
-"@bull-board/api@^4.12.1":
+"@bull-board/api@4.12.1", "@bull-board/api@^4.12.1":
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/@bull-board/api/-/api-4.12.1.tgz#10e328fb3c70473ca99a27e6ebbec11b5ce6a9d5"
   integrity sha512-cJk7LhphNZHwbN4yON5rYiDgob3D7cwFGrxf6LlnR1w/a6zyap1x/o74MfV/0T6NpUpvUSf7ccbj3knU6DNYVw==
   dependencies:
     redis-info "^3.0.8"
 
-"@bull-board/express@^4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@bull-board/express/-/express-4.11.0.tgz#7889232faee6c4f1e980a2ce75ab358c1cad5e4a"
-  integrity sha512-5ePkp3EYKjQOFhZRJ0QsWHHwhOu5aFrG8vrs/DagXfxxkZcUyLmfwr6+rROGu7knkLg1qEki1lQiVSYOVaS8cQ==
+"@bull-board/express@^4.12.1":
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/@bull-board/express/-/express-4.12.1.tgz#58c1b056fbbd94a5b55ddec98522b840b24305fc"
+  integrity sha512-hxnOS1xOH+KWu2JXfxPu9HgmuNVzfHosg9W21UCp/SyQNG/R5AscB3ksZxwp2y+HKJMi6Zn597gsOVP+l7wzig==
   dependencies:
-    "@bull-board/api" "4.11.0"
-    "@bull-board/ui" "4.11.0"
+    "@bull-board/api" "4.12.1"
+    "@bull-board/ui" "4.12.1"
     ejs "3.1.7"
     express "4.17.3"
 
-"@bull-board/ui@4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@bull-board/ui/-/ui-4.11.0.tgz#21aeb1b35bd2e9eb3597255333caa755dc4ce13b"
-  integrity sha512-/Yb7x/3tWxysA2jRDQ89xEPnscvfGQdf4MmDRzWH5lDkVmL8b1HvZAQxLrHcxwB6y16oorQTf/1KbRZl0rJDHg==
+"@bull-board/ui@4.12.1":
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/@bull-board/ui/-/ui-4.12.1.tgz#53a41ad1de37e942b907b7095ec575e852c2acfe"
+  integrity sha512-nNTjxitLEre+UdZjwMHwlKKGxpg3OV/Sf7dNOlhJYoRjO7aYPb63M+BfGVrYgupk3V73Q0qvl1emtsnF/qz/Wg==
   dependencies:
-    "@bull-board/api" "4.11.0"
+    "@bull-board/api" "4.12.1"
 
 "@colors/colors@1.5.0":
   version "1.5.0"

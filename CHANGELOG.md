@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Addono/bull-board-docker/compare/v1.4.0...v1.4.1) (2023-02-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @bull-board/express from 4.11.0 to 4.12.1 ([#174](https://github.com/Addono/bull-board-docker/issues/174)) ([7502d2d](https://github.com/Addono/bull-board-docker/commit/7502d2de4171747de13e39fc46552c991c0c711b))
+
 # [1.4.0](https://github.com/Addono/bull-board-docker/compare/v1.3.1...v1.4.0) (2023-02-24)
 
 

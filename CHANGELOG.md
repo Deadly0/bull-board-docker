@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Addono/bull-board-docker/compare/v1.3.1...v1.4.0) (2023-02-24)
+
+
+### Features
+
+* **deps:** bump @bull-board/api from 4.11.1 to 4.12.1 ([#173](https://github.com/Addono/bull-board-docker/issues/173)) ([2703220](https://github.com/Addono/bull-board-docker/commit/27032202a1d22ba9cf5493910dc5b339b512b0ea))
+
 ## [1.3.1](https://github.com/Addono/bull-board-docker/compare/v1.3.0...v1.3.1) (2023-02-14)
 
 

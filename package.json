@@ -4,21 +4,27 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "node -r esm .",
+    "dev": "nodemon -r esm ."
   },
   "dependencies": {
     "@bull-board/api": "^3.2.6",
     "@bull-board/express": "^3.2.6",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.2",
     "bull": "^3.13.0",
     "bullmq": "^1.8.4",
     "connect-ensure-login": "^0.1.1",
-    "dotenv": "^14.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "redis": "^3.1.2"
+  },
+  "author": {
+    "name": "Venatum",
+    "email": "https://github.com/Venatum"
   }
 }

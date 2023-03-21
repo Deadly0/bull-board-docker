@@ -1,17 +1,16 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const express = require('express');
+import passport from 'passport';
+import {Strategy as LocalStrategy} from 'passport-local';
+import express from 'express';
 
-const config = require('./config');
+import {config} from "./config";
 
-const authRouter = express.Router();
+export const authRouter = express.Router();
 
 passport.use(new LocalStrategy(
 	function (username, password, cb) {
 		if (username === config.USER_LOGIN && password === config.USER_PASSWORD) {
 			return cb(null, {user: 'bull-board'});
 		}
-
 		return cb(null, false);
 	})
 );
@@ -32,5 +31,3 @@ authRouter.route('/')
 		successRedirect: config.HOME_PAGE,
 		failureRedirect: config.LOGIN_PAGE,
 	}));
-
-exports.authRouter = authRouter;

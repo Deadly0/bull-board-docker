@@ -1,49 +1,48 @@
+import passport from 'passport';
+import express from 'express';
+import session from 'express-session';
+import bodyParser from 'body-parser';
+import { ensureLoggedIn } from 'connect-ensure-login';
+
+import {redisConfig, client} from "./redis";
+import {config} from "./config";
+import {authRouter} from './login';
+
+
 const {createBullBoard} = require('@bull-board/api');
 const {BullAdapter} = require('@bull-board/api/bullAdapter');
 const {BullMQAdapter} = require('@bull-board/api//bullMQAdapter');
 const {ExpressAdapter} = require('@bull-board/express');
 const Queue = require('bull');
 const bullmq = require('bullmq');
-const express = require('express');
-const redis = require('redis');
-const session = require('express-session');
-const passport = require('passport');
-const {ensureLoggedIn} = require('connect-ensure-login');
-const bodyParser = require('body-parser');
-
-const {authRouter} = require('./login');
-const config = require('./config');
-
-const redisConfig = {
-	redis: {
-		port: config.REDIS_PORT,
-		host: config.REDIS_HOST,
-		db: config.REDIS_DB,
-		...(config.REDIS_PASSWORD && {password: config.REDIS_PASSWORD}),
-		tls: config.REDIS_USE_TLS === 'true',
-	},
-};
 
 const serverAdapter = new ExpressAdapter();
-const client = redis.createClient(redisConfig.redis);
 const {setQueues} = createBullBoard({queues: [], serverAdapter});
 const router = serverAdapter.getRouter();
 
-client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
-	const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));
-	const queueList = Array.from(uniqKeys).sort().map(
-		(item) => {
-			if (config.BULL_VERSION === 'BULLMQ') {
-				return new BullMQAdapter(new bullmq.Queue(item, {connection: redisConfig.redis}));
+async function main() {
+	// await client.connect();
+
+	client.KEYS(`${config.BULL_PREFIX}:*`, (err, keys) => {
+		const uniqKeys = new Set(keys.map(key => key.replace(/^.+?:(.+?):.+?$/, '$1')));
+		const queueList = Array.from(uniqKeys).sort().map(
+			(item) => {
+				if (config.BULL_VERSION === 'BULLMQ') {
+					return new BullMQAdapter(new bullmq.Queue(item, {connection: redisConfig.redis}));
+				}
+
+				return new BullAdapter(new Queue(item, redisConfig));
 			}
+		);
 
-			return new BullAdapter(new Queue(item, redisConfig));
-		}
-	);
+		setQueues(queueList);
+		console.log('done!')
+	});
+}
 
-	setQueues(queueList);
-	console.log('done!')
-});
+main();
+
+// ------------------------------------
 
 const app = express();
 
@@ -59,7 +58,6 @@ app.use((req, res, next) => {
 	if (config.PROXY_PATH) {
 		req.proxyUrl = config.PROXY_PATH;
 	}
-
 	next();
 });
 

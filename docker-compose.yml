@@ -1,14 +1,21 @@
 version: "3.5"
 
 services:
-  bullboard:
-    container_name: bullboard
-    build:
-      dockerfile: ./Dockerfile
-      context: .
-    restart: always
+#  bullboard:
+#    container_name: bullboard
+#    build:
+#      dockerfile: ./Dockerfile
+#      context: .
+#    environment:
+#      REDIS_HOST: host
+#      REDIS_PASSWORD: pass
+#    restart: unless-stopped
+#    ports:
+#      - "3000:3000"
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: unless-stopped
     ports:
-      - 3000:3000
-    environment:
-      REDIS_HOST: host
-      REDIS_PASSWORD: pass
+      - "6379:6379"

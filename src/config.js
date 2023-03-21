@@ -1,12 +1,13 @@
-require('dotenv').config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 function normalizePath(pathStr) {
 	return (pathStr || '').replace(/\/$/, '');
 }
 
-const PROXY_PATH = normalizePath(process.env.PROXY_PATH);
+export const PROXY_PATH = normalizePath(process.env.PROXY_PATH);
 
-const config = {
+export const config = {
 	REDIS_PORT: process.env.REDIS_PORT || 6379,
 	REDIS_HOST: process.env.REDIS_HOST || 'localhost',
 	REDIS_DB: process.env.REDIS_DB || '0',
@@ -23,5 +24,3 @@ const config = {
 	HOME_PAGE: PROXY_PATH || '/',
 	LOGIN_PAGE: `${PROXY_PATH}/login`,
 };
-
-module.exports = config;

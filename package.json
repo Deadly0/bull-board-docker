@@ -3,9 +3,26 @@
   "version": "5.0.0",
   "main": "src/index.js",
   "license": "MIT",
+  "description": "A docker image for @bull-board",
+  "keywords": [
+    "bull",
+    "bullmq",
+    "redis",
+    "queue",
+    "monitoring",
+    "dashboard",
+    "docker"
+  ],
+  "bugs": {
+    "url": "https://github.com/Venatum/bull-board-docker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Venatum/bull-board-docker.git"
+  },
   "scripts": {
     "start": "node -r esm .",
-    "dev": "nodemon -r esm ."
+    "start:dev": "nodemon -r esm ."
   },
   "dependencies": {
     "@bull-board/api": "^5.0.0",

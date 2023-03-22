@@ -11,5 +11,6 @@ export const redisConfig = {
 	},
 };
 
+// https://github.com/redis/node-redis/blob/master/docs/v3-to-v4.md
 export const client = createClient(redisConfig.redis);
 client.on('error', err => console.log('Redis Client Error', err));

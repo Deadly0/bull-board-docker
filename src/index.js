@@ -55,6 +55,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 if (app.get('env') !== 'production') {
+	console.log('bull-board condig:', config);
 	const morgan = require('morgan');
 	app.use(morgan('combined'));
 }
@@ -86,7 +87,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 if (config.AUTH_ENABLED) {
 	app.use(config.LOGIN_PAGE, authRouter);
-	app.use(config.HOME_PAGE, ensureLoggedIn(config.LOGIN_PAGE), router);
+	app.use(config.HOME_PAGE, ensureLoggedIn(config.PROXY_LOGIN_PAGE), router);
 } else {
 	app.use(config.HOME_PAGE, router);
 }

@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/Addono/bull-board-docker/compare/v1.5.0...v1.6.0) (2023-04-20)
+
+
+### Features
+
+* **deps:** bump @bull-board/express from 4.12.1 to 5.0.0 ([#183](https://github.com/Addono/bull-board-docker/issues/183)) ([1fc8384](https://github.com/Addono/bull-board-docker/commit/1fc8384a988c6f42e499f6b309d9d33d96258045))
+* **deps:** bump @bull-board/express from 5.0.0 to 5.0.1 ([#192](https://github.com/Addono/bull-board-docker/issues/192)) ([d2942ca](https://github.com/Addono/bull-board-docker/commit/d2942ca88295ff13431f5880ad37d382097700c9))
+
 # [1.5.0](https://github.com/Addono/bull-board-docker/compare/v1.4.1...v1.5.0) (2023-04-03)
 
 

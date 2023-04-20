@@ -25,6 +25,10 @@ const redisConfig = {
 };
 
 const serverAdapter = new ExpressAdapter();
+if (config.PROXY_PATH) {
+	serverAdapter.setBasePath(config.PROXY_PATH);
+}
+
 const client = redis.createClient(redisConfig.redis);
 const {setQueues} = createBullBoard({queues: [], serverAdapter});
 const router = serverAdapter.getRouter();
@@ -58,14 +62,6 @@ if (app.get('env') !== 'production') {
 	const morgan = require('morgan');
 	app.use(morgan('combined'));
 }
-
-app.use((req, res, next) => {
-	if (config.PROXY_PATH) {
-		req.proxyUrl = config.PROXY_PATH;
-	}
-
-	next();
-});
 
 const sessionOpts = {
 	name: 'bull-board.sid',

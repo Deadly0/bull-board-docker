@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Addono/bull-board-docker/compare/v1.8.0...v1.9.0) (2023-06-09)
+
+
+### Features
+
+* **deps:** bump @bull-board/api from 5.2.0 to 5.2.1 ([#206](https://github.com/Addono/bull-board-docker/issues/206)) ([e2aa5c3](https://github.com/Addono/bull-board-docker/commit/e2aa5c3e600155760d8eafe460104d395396bc73))
+
 # [1.8.0](https://github.com/Addono/bull-board-docker/compare/v1.7.0...v1.8.0) (2023-05-17)
 
 

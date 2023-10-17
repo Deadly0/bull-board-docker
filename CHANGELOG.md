@@ -1,3 +1,15 @@
+# [1.13.0](https://github.com/Addono/bull-board-docker/compare/v1.12.0...v1.13.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* configure bullmq with prefix when present ([6d3538f](https://github.com/Addono/bull-board-docker/commit/6d3538f45409957f3a24d23c9075b6b1a80a52c7))
+
+
+### Features
+
+* sync with upstream ([35d83d0](https://github.com/Addono/bull-board-docker/commit/35d83d01a1ac57a5c3c830d6e6b771debbd180aa))
+
 # [1.12.0](https://github.com/Addono/bull-board-docker/compare/v1.11.0...v1.12.0) (2023-10-17)
 
 

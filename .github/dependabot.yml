@@ -21,7 +21,9 @@ updates:
     ignore:
       # Bull Board stays on BullMQ v1
       - dependency-name: 'bullmq'
-        versions: [">=2"]
+        versions: ['>=2']
+      - dependency-name: 'redis'
+        versions: ['>=4']
     groups:
       bull-board:
         patterns: ["@bull-board/*"]
